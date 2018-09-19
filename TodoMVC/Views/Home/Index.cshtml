@@ -1,0 +1,21 @@
+﻿@model List<Todo>
+
+<br/>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="col-md-10" scope="col">Message</th>
+            <th scope="col-md-2">Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var todo in Model)
+        {
+            <tr>
+                <td>@todo.Message</td>
+                <td>@Html.ActionLink("Delete", "DeleteTodo", routeValues: new { Id = todo.Id }, htmlAttributes: new { @class = "btn btn-danger" }) </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Add TODO", "CreateTodo", null, null, new { @class = "btn btn-default btn-lg" })

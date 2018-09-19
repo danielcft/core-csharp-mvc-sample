@@ -1,0 +1,14 @@
+﻿@model Todo
+@{
+    ViewData["Title"] = "Add TODO";
+}
+<h2>@ViewData["Title"]</h2>
+
+
+<form asp-controller="Home" asp-action="CreateTodoPost">
+    <div class="form-group">
+        <label>Message</label>
+        <input asp-for="Message" />
+    </div>
+    <input class="btn btn-default" type="submit" />
+</form>
